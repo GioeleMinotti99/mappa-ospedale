@@ -1,133 +1,140 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guida ospedaliera</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f4f8ff;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    h2 {
-      color: #004080;
-    }
-    .screen {
-      display: none;
-    }
-    .visible {
-      display: block;
-    }
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #007bff;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    #back-button {
-      background-color: #888;
-      margin-top: 20px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guida Ospedale</title>
+<style>
+  /* Reset base */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E6F4FF;
+  }
+  /* Container centrato verticalmente e orizzontalmente */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical */
+    align-items: center;     /* horizontal */
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  h1, h2 {
+    margin-bottom: 1rem;
+    color: #003366;
+  }
+  /* Pulsanti uno sotto l'altro con margine */
+  button {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    margin: 10px auto;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #0077cc;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #005fa3;
+  }
+  /* Nascondi sezioni non attive */
+  .hidden {
+    display: none;
+  }
+  /* Testo guida finale */
+  #guida {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #004080;
+    max-width: 320px;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Schermata 1: Scelta partenza -->
-  <div id="screen1" class="screen visible">
-    <h2>Dove ti trovi?</h2>
-    <div class="button-group">
-      <button onclick="selezionaPartenza('.1')">.1</button>
-      <button onclick="selezionaPartenza('.2')">.2</button>
-      <button onclick="selezionaPartenza('.3')">.3</button>
-      <button onclick="selezionaPartenza('.4')">.4</button>
-      <button onclick="selezionaPartenza('.5')">.5</button>
-    </div>
+<div class="container">
+
+  <!-- Schermata 1: punto di partenza -->
+  <div id="schermata1">
+    <h1>Dove ti trovi?</h1>
+    <button onclick="scegliPartenza('.1')">Partenza .1</button>
+    <button onclick="scegliPartenza('.2')">Partenza .2</button>
+    <button onclick="scegliPartenza('.3')">Partenza .3</button>
+    <button onclick="scegliPartenza('.4')">Partenza .4</button>
+    <button onclick="scegliPartenza('.5')">Partenza .5</button>
   </div>
 
-  <!-- Schermata 2: Scelta destinazione -->
-  <div id="screen2" class="screen">
+  <!-- Schermata 2: punto di arrivo -->
+  <div id="schermata2" class="hidden">
     <h2>Dove devi andare?</h2>
-    <div class="button-group">
-      <button onclick="selezionaDestinazione('.1')">.1</button>
-      <button onclick="selezionaDestinazione('.2')">.2</button>
-      <button onclick="selezionaDestinazione('.3')">.3</button>
-      <button onclick="selezionaDestinazione('.4')">.4</button>
-      <button onclick="selezionaDestinazione('.5')">.5</button>
-      <button onclick="selezionaDestinazione('.6')">.6</button>
-      <button onclick="selezionaDestinazione('.7')">.7</button>
-    </div>
-    <button id="back-button" onclick="tornaAllaSchermata1()">← Indietro</button>
+    <button onclick="scegliArrivo('.1')">Arrivo .1</button>
+    <button onclick="scegliArrivo('.2')">Arrivo .2</button>
+    <button onclick="scegliArrivo('.3')">Arrivo .3</button>
+    <button onclick="scegliArrivo('.4')">Arrivo .4</button>
+    <button onclick="scegliArrivo('.5')">Arrivo .5</button>
+    <button onclick="scegliArrivo('.6')">Arrivo .6</button>
+    <button onclick="scegliArrivo('.7')">Arrivo .7</button>
   </div>
 
-  <!-- Schermata 3: Istruzioni -->
-  <div id="screen3" class="screen">
-    <h2>Istruzioni per raggiungere la destinazione</h2>
-    <p id="istruzioni"></p>
-    <button onclick="restart()">Torna all'inizio</button>
+  <!-- Schermata 3: guida passo passo -->
+  <div id="schermata3" class="hidden">
+    <h2>Come arrivare</h2>
+    <div id="guida">Caricamento guida...</div>
+    <button onclick="ricomincia()">Ricomincia</button>
   </div>
 
-  <script>
-    let partenza = "";
-    let destinazione = "";
+</div>
 
-    function selezionaPartenza(p) {
-      partenza = p;
-      mostraSchermata(2);
-    }
+<script>
+  let partenzaSelezionata = null;
+  let arrivoSelezionata = null;
 
-    function selezionaDestinazione(d) {
-      destinazione = d;
-      mostraIstruzioni();
-    }
+  function scegliPartenza(punto) {
+    partenzaSelezionata = punto;
+    // Nascondo schermata1, mostro schermata2
+    document.getElementById('schermata1').classList.add('hidden');
+    document.getElementById('schermata2').classList.remove('hidden');
+  }
 
-    function mostraSchermata(num) {
-      document.querySelectorAll(".screen").forEach(s => s.classList.remove("visible"));
-      document.getElementById("screen" + num).classList.add("visible");
-    }
+  function scegliArrivo(punto) {
+    arrivoSelezionata = punto;
+    document.getElementById('schermata2').classList.add('hidden');
+    document.getElementById('schermata3').classList.remove('hidden');
 
-    function tornaAllaSchermata1() {
-      partenza = "";
-      mostraSchermata(1);
-    }
+    mostraGuida(partenzaSelezionata, arrivoSelezionata);
+  }
 
-    function restart() {
-      partenza = "";
-      destinazione = "";
-      mostraSchermata(1);
-    }
+  function mostraGuida(partenza, arrivo) {
+    // Qui puoi personalizzare il testo della guida in base alle scelte
+    const guidaDiv = document.getElementById('guida');
 
-    function mostraIstruzioni() {
-      const istruzioniMap = {
-        ".1_.1": "Sei già arrivato.",
-        ".1_.2": "Dalla posizione .1, prendi il corridoio centrale e gira a destra.",
-        ".2_.3": "Dalla posizione .2, segui il corridoio blu fino all'ascensore. Sali al 2° piano.",
-        ".3_.4": "Dalla posizione .3, torna indietro fino all'incrocio e gira a sinistra.",
-        ".4_.5": "Segui le indicazioni verdi e prendi la scala C. Il reparto si trova al piano -1.",
-        ".5_.6": "Attraversa il giardino interno e segui il corridoio B fino in fondo.",
-        ".5_.7": "Ritorna verso l'ingresso e chiedi indicazioni al punto informazioni.",
-        // Altri casi personalizzabili...
-      };
+    // Per ora testo generico, cambia a piacere
+    guidaDiv.innerHTML = `
+      <p>Partenza: <strong>${partenza}</strong></p>
+      <p>Arrivo: <strong>${arrivo}</strong></p>
+      <p>Indicazioni passo-passo per andare da ${partenza} a ${arrivo}:</p>
+      <ol style="text-align:left;">
+        <li>Esci dal punto ${partenza}</li>
+        <li>Segui il corridoio principale</li>
+        <li>Prendi l'ascensore o la scala</li>
+        <li>Arrivi al reparto ${arrivo}</li>
+      </ol>
+    `;
+  }
 
-      const chiave = `${partenza}_${destinazione}`;
-      const testo = istruzioniMap[chiave] || `Dalla posizione ${partenza} alla destinazione ${destinazione}, segui la segnaletica interna o chiedi al personale.`;
+  function ricomincia() {
+    partenzaSelezionata = null;
+    arrivoSelezionata = null;
+    document.getElementById('schermata3').classList.add('hidden');
+    document.getElementById('schermata1').classList.remove('hidden');
+  }
+</script>
 
-      document.getElementById("istruzioni").innerText = testo;
-      mostraSchermata(3);
-    }
-  </script>
 </body>
 </html>
