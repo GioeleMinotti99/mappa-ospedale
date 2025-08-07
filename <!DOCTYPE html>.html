@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guida ospedaliera</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f4f8ff;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      color: #004080;
+    }
+    .screen {
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #back-button {
+      background-color: #888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Schermata 1: Scelta partenza -->
+  <div id="screen1" class="screen visible">
+    <h2>Dove ti trovi?</h2>
+    <div class="button-group">
+      <button onclick="selezionaPartenza('.1')">.1</button>
+      <button onclick="selezionaPartenza('.2')">.2</button>
+      <button onclick="selezionaPartenza('.3')">.3</button>
+      <button onclick="selezionaPartenza('.4')">.4</button>
+      <button onclick="selezionaPartenza('.5')">.5</button>
+    </div>
+  </div>
+
+  <!-- Schermata 2: Scelta destinazione -->
+  <div id="screen2" class="screen">
+    <h2>Dove devi andare?</h2>
+    <div class="button-group">
+      <button onclick="selezionaDestinazione('.1')">.1</button>
+      <button onclick="selezionaDestinazione('.2')">.2</button>
+      <button onclick="selezionaDestinazione('.3')">.3</button>
+      <button onclick="selezionaDestinazione('.4')">.4</button>
+      <button onclick="selezionaDestinazione('.5')">.5</button>
+      <button onclick="selezionaDestinazione('.6')">.6</button>
+      <button onclick="selezionaDestinazione('.7')">.7</button>
+    </div>
+    <button id="back-button" onclick="tornaAllaSchermata1()">← Indietro</button>
+  </div>
+
+  <!-- Schermata 3: Istruzioni -->
+  <div id="screen3" class="screen">
+    <h2>Istruzioni per raggiungere la destinazione</h2>
+    <p id="istruzioni"></p>
+    <button onclick="restart()">Torna all'inizio</button>
+  </div>
+
+  <script>
+    let partenza = "";
+    let destinazione = "";
+
+    function selezionaPartenza(p) {
+      partenza = p;
+      mostraSchermata(2);
+    }
+
+    function selezionaDestinazione(d) {
+      destinazione = d;
+      mostraIstruzioni();
+    }
+
+    function mostraSchermata(num) {
+      document.querySelectorAll(".screen").forEach(s => s.classList.remove("visible"));
+      document.getElementById("screen" + num).classList.add("visible");
+    }
+
+    function tornaAllaSchermata1() {
+      partenza = "";
+      mostraSchermata(1);
+    }
+
+    function restart() {
+      partenza = "";
+      destinazione = "";
+      mostraSchermata(1);
+    }
+
+    function mostraIstruzioni() {
+      const istruzioniMap = {
+        ".1_.1": "Sei già arrivato.",
+        ".1_.2": "Dalla posizione .1, prendi il corridoio centrale e gira a destra.",
+        ".2_.3": "Dalla posizione .2, segui il corridoio blu fino all'ascensore. Sali al 2° piano.",
+        ".3_.4": "Dalla posizione .3, torna indietro fino all'incrocio e gira a sinistra.",
+        ".4_.5": "Segui le indicazioni verdi e prendi la scala C. Il reparto si trova al piano -1.",
+        ".5_.6": "Attraversa il giardino interno e segui il corridoio B fino in fondo.",
+        ".5_.7": "Ritorna verso l'ingresso e chiedi indicazioni al punto informazioni.",
+        // Altri casi personalizzabili...
+      };
+
+      const chiave = `${partenza}_${destinazione}`;
+      const testo = istruzioniMap[chiave] || `Dalla posizione ${partenza} alla destinazione ${destinazione}, segui la segnaletica interna o chiedi al personale.`;
+
+      document.getElementById("istruzioni").innerText = testo;
+      mostraSchermata(3);
+    }
+  </script>
+</body>
+</html>
