@@ -2,11 +2,10 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Guida Ospedale</title>
   <style>
-    
-   html, body {
+    html, body {
       height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
@@ -31,7 +30,8 @@
     }
     button {
       display: block;
-      width: 250px;
+      width: 90%;
+      max-width: 300px;
       padding: 12px;
       margin: 8px auto;
       font-size: 1rem;
@@ -63,35 +63,40 @@
   <!-- Schermata 1 -->
   <div id="schermata1">
     <h1>Dove ti trovi?</h1>
-    <button onclick="scegliPartenza('Ingresso Principale')">Ingresso Principale</button>
-    <button onclick="scegliPartenza('Scala A')">Scala A</button>
-    <button onclick="scegliPartenza('Scala B')">Scala B</button>
-    <button onclick="scegliPartenza('Scala C')">Scala C</button>
-    <button onclick="scegliPartenza('Scala D')">Scala D</button>
-    <button onclick="scegliPartenza('Scala E')">Scala E</button>
+    <button onclick="scegliPartenza('ingresso principale')">Ingresso principale</button>
+    <button onclick="scegliPartenza('scala A')">Scala A</button>
+    <button onclick="scegliPartenza('scala B')">Scala B</button>
+    <button onclick="scegliPartenza('scala C')">Scala C</button>
+    <button onclick="scegliPartenza('scala D')">Scala D</button>
+    <button onclick="scegliPartenza('scala E')">Scala E</button>
+    <button onclick="scegliPartenza('scala G')">Scala G</button>
   </div>
 
   <!-- Schermata 2 -->
   <div id="schermata2" class="hidden">
     <h2>Dove devi andare?</h2>
-    <button onclick="scegliArrivo('Ortopedia Scala B 3')">Ortopedia (Scala B, Piano 3)</button>
-    <button onclick="scegliArrivo('Chirurgia d\'Urgenza Scala B 4')">Chirurgia d'Urgenza (Scala B, Piano 4)</button>
-    <button onclick="scegliArrivo('Ostetricia e Ginecologia Scala B 5')">Ostetricia e Ginecologia (Scala B, Piano 5)</button>
-    <button onclick="scegliArrivo('Medicina Interna Scala B 6')">Medicina Interna (Scala B, Piano 6)</button>
-    <button onclick="scegliArrivo('Cardiologia Scala B 7')">Cardiologia e Terapia Intensiva (Scala B, Piano 7)</button>
-    <button onclick="scegliArrivo('Medicina d\'Urgenza Scala E 1')">Medicina d'Urgenza (Scala E, Piano 1)</button>
-    <button onclick="scegliArrivo('Degenza Chirurgica Scala E 2')">Degenza Chirurgica (Scala E, Piano 2)</button>
-    <button onclick="scegliArrivo('Urologia Scala E 2')">Urologia (Scala E, Piano 2)</button>
-    <button onclick="scegliArrivo('Centro Grandi Ustionati Scala E 3')">Centro Grandi Ustionati (Scala E, Piano 3)</button>
-    <button onclick="scegliArrivo('Reanimazione Scala D 4')">Reanimazione (Scala D, Piano 4)</button>
-    <button onclick="scegliArrivo('Neurochirurgia Scala D 5')">Neurochirurgia (Scala D, Piano 5)</button>
-    <button onclick="scegliArrivo('Chirurgia Vascolare Scala C 3')">Chirurgia Vascolare (Scala C, Piano 3)</button>
-    <button onclick="scegliArrivo('Gastroenterologia Scala C 3')">Gastroenterologia (Scala C, Piano 3)</button>
-    <button onclick="scegliArrivo('Ambulatorio Preospedalizzazione Scala C 4')">Ambulatorio Preospedalizzazione (Scala C, Piano 4)</button>
-    <button onclick="scegliArrivo('Ambulatori Ostetricia Scala C 5')">Ambulatori Ostetricia (Scala C, Piano 5)</button>
-    <button onclick="scegliArrivo('Aria Ambulatoriale Scala C 6')">Aria Ambulatoriale (Scala C, Piano 6)</button>
-    <button onclick="scegliArrivo('Pediatria Scala C 7')">Pediatria (Scala C, Piano 7)</button>
-    <button onclick="scegliArrivo('Terapia Intensiva Neonatale Scala C 7')">Terapia Intensiva Neonatale (Scala C, Piano 7)</button>
+    <button onclick="scegliArrivo('Ortopedia')">Ortopedia</button>
+    <button onclick="scegliArrivo('Chirurgia generale e d\'urgenza')">Chirurgia generale e d'urgenza</button>
+    <button onclick="scegliArrivo('Ostetricia e Ginecologia')">Ostetricia e Ginecologia</button>
+    <button onclick="scegliArrivo('Medicina Interna')">Medicina Interna</button>
+    <button onclick="scegliArrivo('Cardiologia e Terapia Intensiva Cardiologica')">Cardiologia e Terapia Intensiva Cardiologica</button>
+    <button onclick="scegliArrivo('Medicina d\'Urgenza')">Medicina d'Urgenza</button>
+    <button onclick="scegliArrivo('Nefrologia')">Nefrologia</button>
+    <button onclick="scegliArrivo('Neurologia')">Neurologia</button>
+    <button onclick="scegliArrivo('Degenza Chirurgica')">Degenza Chirurgica</button>
+    <button onclick="scegliArrivo('Urologia')">Urologia</button>
+    <button onclick="scegliArrivo('Centro Grandi Ustionati')">Centro Grandi Ustionati</button>
+    <button onclick="scegliArrivo('Maxillo Facciale')">Maxillo Facciale</button>
+    <button onclick="scegliArrivo('Otorhinolaryngoiatria')">Otorhinolaryngoiatria</button>
+    <button onclick="scegliArrivo('Reanimazione')">Reanimazione</button>
+    <button onclick="scegliArrivo('Neurochirurgia')">Neurochirurgia</button>
+    <button onclick="scegliArrivo('Chirurgia Vascolare')">Chirurgia Vascolare</button>
+    <button onclick="scegliArrivo('Gastroenterologia')">Gastroenterologia</button>
+    <button onclick="scegliArrivo('Ambulatorio Preospedalizzazione')">Ambulatorio Preospedalizzazione</button>
+    <button onclick="scegliArrivo('Ostetricia ambulatoriale')">Ostetricia ambulatoriale</button>
+    <button onclick="scegliArrivo('Aria Ambulatoriale')">Aria Ambulatoriale</button>
+    <button onclick="scegliArrivo('Pediatria')">Pediatria</button>
+    <button onclick="scegliArrivo('Terapia Intensiva Neonatale e Pediatrica')">Terapia Intensiva Neonatale e Pediatrica</button>
   </div>
 
   <!-- Schermata 3 -->
@@ -107,7 +112,8 @@
   let partenzaSelezionata = null;
   let arrivoSelezionata = null;
 
-  const guidaMap = {
+  // Qui inserisci il tuo guidaMap
+const guidaMap = {
     // --- INGRESSO PRINCIPALE ---
     "Ingresso Principale_Ortopedia Scala B 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 3.",
     "Ingresso Principale_Chirurgia d'Urgenza Scala B 4": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 4.",
@@ -175,15 +181,17 @@
     "Scala E_Centro Grandi Ustionati Scala E 3": "Prendi la Scala E e sali al piano 3."
 };
 
-  function scegliPartenza(p) {
-    partenzaSelezionata = p;
-    document.getElementById("schermata1").classList.add("hidden");
-    document.getElementById("schermata2").classList.remove("hidden");
+  function scegliPartenza(punto) {
+    partenzaSelezionata = punto.trim().toLowerCase();
+    document.getElementById('schermata1').classList.add('hidden');
+    document.getElementById('schermata2').classList.remove('hidden');
   }
 
-  function scegliArrivo(a) {
-    arrivoSelezionata = a;
-    mostraGuida();
+  function scegliArrivo(punto) {
+    arrivoSelezionata = punto.trim().toLowerCase();
+    document.getElementById('schermata2').classList.add('hidden');
+    document.getElementById('schermata3').classList.remove('hidden');
+    mostraGuida(partenzaSelezionata, arrivoSelezionata);
   }
 
   function mostraGuida(partenza, arrivo) {
@@ -200,8 +208,8 @@
   function ricomincia() {
     partenzaSelezionata = null;
     arrivoSelezionata = null;
-    document.getElementById("schermata3").classList.add("hidden");
-    document.getElementById("schermata1").classList.remove("hidden");
+    document.getElementById('schermata3').classList.add('hidden');
+    document.getElementById('schermata1').classList.remove('hidden');
   }
 </script>
 
