@@ -1,91 +1,98 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Guida Ospedale</title>
-<style>
-  /* Reset base */
-  body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #E6F4FF;
-  }
-  /* Container centrato verticalmente e orizzontalmente */
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertical */
-    align-items: center;     /* horizontal */
-    height: 100vh;
-    text-align: center;
-    padding: 20px;
-  }
-  h1, h2 {
-    margin-bottom: 1rem;
-    color: #003366;
-  }
-  /* Pulsanti uno sotto l'altro con margine */
-  button {
-    display: block;
-    width: 200px;
-    padding: 12px;
-    margin: 10px auto;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    border: none;
-    background-color: #0077cc;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  button:hover {
-    background-color: #005fa3;
-  }
-  /* Nascondi sezioni non attive */
-  .hidden {
-    display: none;
-  }
-  /* Testo guida finale */
-  #guida {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #004080;
-    max-width: 320px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guida Ospedale</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #E6F4FF;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    button {
+      display: block;
+      width: 250px;
+      padding: 12px;
+      margin: 8px auto;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #0077cc;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .hidden {
+      display: none;
+    }
+    #guida {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #004080;
+      max-width: 400px;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
 
-  <!-- Schermata 1: punto di partenza -->
+  <!-- Schermata 1 -->
   <div id="schermata1">
     <h1>Dove ti trovi?</h1>
-    <button onclick="scegliPartenza('.1')">Partenza .1</button>
-    <button onclick="scegliPartenza('.2')">Partenza .2</button>
-    <button onclick="scegliPartenza('.3')">Partenza .3</button>
-    <button onclick="scegliPartenza('.4')">Partenza .4</button>
-    <button onclick="scegliPartenza('.5')">Partenza .5</button>
+    <button onclick="scegliPartenza('Ingresso Principale')">Ingresso Principale</button>
+    <button onclick="scegliPartenza('Scala A')">Scala A</button>
+    <button onclick="scegliPartenza('Scala B')">Scala B</button>
+    <button onclick="scegliPartenza('Scala C')">Scala C</button>
+    <button onclick="scegliPartenza('Scala D')">Scala D</button>
+    <button onclick="scegliPartenza('Scala E')">Scala E</button>
   </div>
 
-  <!-- Schermata 2: punto di arrivo -->
+  <!-- Schermata 2 -->
   <div id="schermata2" class="hidden">
     <h2>Dove devi andare?</h2>
-    <button onclick="scegliArrivo('.1')">Arrivo .1</button>
-    <button onclick="scegliArrivo('.2')">Arrivo .2</button>
-    <button onclick="scegliArrivo('.3')">Arrivo .3</button>
-    <button onclick="scegliArrivo('.4')">Arrivo .4</button>
-    <button onclick="scegliArrivo('.5')">Arrivo .5</button>
-    <button onclick="scegliArrivo('.6')">Arrivo .6</button>
-    <button onclick="scegliArrivo('.7')">Arrivo .7</button>
+    <button onclick="scegliArrivo('Ortopedia Scala B 3')">Ortopedia (Scala B, Piano 3)</button>
+    <button onclick="scegliArrivo('Chirurgia d\'Urgenza Scala B 4')">Chirurgia d'Urgenza (Scala B, Piano 4)</button>
+    <button onclick="scegliArrivo('Ostetricia e Ginecologia Scala B 5')">Ostetricia e Ginecologia (Scala B, Piano 5)</button>
+    <button onclick="scegliArrivo('Medicina Interna Scala B 6')">Medicina Interna (Scala B, Piano 6)</button>
+    <button onclick="scegliArrivo('Cardiologia Scala B 7')">Cardiologia e Terapia Intensiva (Scala B, Piano 7)</button>
+    <button onclick="scegliArrivo('Medicina d\'Urgenza Scala E 1')">Medicina d'Urgenza (Scala E, Piano 1)</button>
+    <button onclick="scegliArrivo('Degenza Chirurgica Scala E 2')">Degenza Chirurgica (Scala E, Piano 2)</button>
+    <button onclick="scegliArrivo('Urologia Scala E 2')">Urologia (Scala E, Piano 2)</button>
+    <button onclick="scegliArrivo('Centro Grandi Ustionati Scala E 3')">Centro Grandi Ustionati (Scala E, Piano 3)</button>
+    <button onclick="scegliArrivo('Reanimazione Scala D 4')">Reanimazione (Scala D, Piano 4)</button>
+    <button onclick="scegliArrivo('Neurochirurgia Scala D 5')">Neurochirurgia (Scala D, Piano 5)</button>
+    <button onclick="scegliArrivo('Chirurgia Vascolare Scala C 3')">Chirurgia Vascolare (Scala C, Piano 3)</button>
+    <button onclick="scegliArrivo('Gastroenterologia Scala C 3')">Gastroenterologia (Scala C, Piano 3)</button>
+    <button onclick="scegliArrivo('Ambulatorio Preospedalizzazione Scala C 4')">Ambulatorio Preospedalizzazione (Scala C, Piano 4)</button>
+    <button onclick="scegliArrivo('Ambulatori Ostetricia Scala C 5')">Ambulatori Ostetricia (Scala C, Piano 5)</button>
+    <button onclick="scegliArrivo('Aria Ambulatoriale Scala C 6')">Aria Ambulatoriale (Scala C, Piano 6)</button>
+    <button onclick="scegliArrivo('Pediatria Scala C 7')">Pediatria (Scala C, Piano 7)</button>
+    <button onclick="scegliArrivo('Terapia Intensiva Neonatale Scala C 7')">Terapia Intensiva Neonatale (Scala C, Piano 7)</button>
   </div>
 
-  <!-- Schermata 3: guida passo passo -->
+  <!-- Schermata 3 -->
   <div id="schermata3" class="hidden">
     <h2>Come arrivare</h2>
-    <div id="guida">Caricamento guida...</div>
+    <div id="guida">Caricamento...</div>
     <button onclick="ricomincia()">Ricomincia</button>
   </div>
 
@@ -95,44 +102,45 @@
   let partenzaSelezionata = null;
   let arrivoSelezionata = null;
 
-  function scegliPartenza(punto) {
-    partenzaSelezionata = punto;
-    // Nascondo schermata1, mostro schermata2
-    document.getElementById('schermata1').classList.add('hidden');
-    document.getElementById('schermata2').classList.remove('hidden');
+  const guidaMap = {
+    // Da Ingresso Principale
+    "Ingresso Principale_Ortopedia Scala B 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra e raggiungi la Scala B. Sali al piano 3.",
+    "Ingresso Principale_Chirurgia d'Urgenza Scala B 4": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 4.",
+    "Ingresso Principale_Ostetricia e Ginecologia Scala B 5": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 5.",
+    "Ingresso Principale_Medicina Interna Scala B 6": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 6.",
+    "Ingresso Principale_Cardiologia Scala B 7": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 7.",
+    "Ingresso Principale_Medicina d'Urgenza Scala E 1": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Scendi al piano 1.",
+    "Ingresso Principale_Degenza Chirurgica Scala E 2": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 2.",
+    "Ingresso Principale_Urologia Scala E 2": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 2.",
+    "Ingresso Principale_Centro Grandi Ustionati Scala E 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 3.",
+    
+    // Tutto il resto ancora da sviluppare
+  };
+
+  function scegliPartenza(p) {
+    partenzaSelezionata = p;
+    document.getElementById("schermata1").classList.add("hidden");
+    document.getElementById("schermata2").classList.remove("hidden");
   }
 
-  function scegliArrivo(punto) {
-    arrivoSelezionata = punto;
-    document.getElementById('schermata2').classList.add('hidden');
-    document.getElementById('schermata3').classList.remove('hidden');
-
-    mostraGuida(partenzaSelezionata, arrivoSelezionata);
+  function scegliArrivo(a) {
+    arrivoSelezionata = a;
+    mostraGuida();
   }
 
-  function mostraGuida(partenza, arrivo) {
-    // Qui puoi personalizzare il testo della guida in base alle scelte
-    const guidaDiv = document.getElementById('guida');
-
-    // Per ora testo generico, cambia a piacere
-    guidaDiv.innerHTML = `
-      <p>Partenza: <strong>${partenza}</strong></p>
-      <p>Arrivo: <strong>${arrivo}</strong></p>
-      <p>Indicazioni passo-passo per andare da ${partenza} a ${arrivo}:</p>
-      <ol style="text-align:left;">
-        <li>Esci dal punto ${partenza}</li>
-        <li>Segui il corridoio principale</li>
-        <li>Prendi l'ascensore o la scala</li>
-        <li>Arrivi al reparto ${arrivo}</li>
-      </ol>
-    `;
+  function mostraGuida() {
+    document.getElementById("schermata2").classList.add("hidden");
+    document.getElementById("schermata3").classList.remove("hidden");
+    const chiave = `${partenzaSelezionata}_${arrivoSelezionata}`;
+    const guida = guidaMap[chiave] || "Percorso in sviluppo";
+    document.getElementById("guida").innerText = guida;
   }
 
   function ricomincia() {
     partenzaSelezionata = null;
     arrivoSelezionata = null;
-    document.getElementById('schermata3').classList.add('hidden');
-    document.getElementById('schermata1').classList.remove('hidden');
+    document.getElementById("schermata3").classList.add("hidden");
+    document.getElementById("schermata1").classList.remove("hidden");
   }
 </script>
 
