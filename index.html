@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Guida Ospedale</title>
   <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #E6F4FF;
-    }
+    
+   html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    padding-top: env(safe-area-inset-top);
+    box-sizing: border-box;
+}
     .container {
       display: flex;
       flex-direction: column;
@@ -181,12 +186,15 @@
     mostraGuida();
   }
 
-  function mostraGuida() {
-    document.getElementById("schermata2").classList.add("hidden");
-    document.getElementById("schermata3").classList.remove("hidden");
-    const chiave = `${partenzaSelezionata}_${arrivoSelezionata}`;
-    const guida = guidaMap[chiave] || "Percorso in sviluppo";
-    document.getElementById("guida").innerText = guida;
+  function mostraGuida(partenza, arrivo) {
+    const chiave = `${partenza}_${arrivo}`;
+    const guidaDiv = document.getElementById('guida');
+
+    if (guidaMap[chiave]) {
+      guidaDiv.innerHTML = `<p>${guidaMap[chiave]}</p>`;
+    } else {
+      guidaDiv.innerHTML = `<p>Percorso in sviluppo.<br><small>(${partenza} ➜ ${arrivo})</small></p>`;
+    }
   }
 
   function ricomincia() {
