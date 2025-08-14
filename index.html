@@ -13,8 +13,8 @@
 }
 
 body {
-    padding-top: env(safe-area-inset-top);
-    box-sizing: border-box;
+    padding-top: 10px; /* fallback */
+    padding-top: env(safe-area-inset-top, 10px);
 }
     .container {
       display: flex;
