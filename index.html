@@ -103,8 +103,8 @@
   let arrivoSelezionata = null;
 
   const guidaMap = {
-    // Da Ingresso Principale
-    "Ingresso Principale_Ortopedia Scala B 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra e raggiungi la Scala B. Sali al piano 3.",
+    // --- INGRESSO PRINCIPALE ---
+    "Ingresso Principale_Ortopedia Scala B 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 3.",
     "Ingresso Principale_Chirurgia d'Urgenza Scala B 4": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 4.",
     "Ingresso Principale_Ostetricia e Ginecologia Scala B 5": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 5.",
     "Ingresso Principale_Medicina Interna Scala B 6": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 6.",
@@ -113,9 +113,62 @@
     "Ingresso Principale_Degenza Chirurgica Scala E 2": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 2.",
     "Ingresso Principale_Urologia Scala E 2": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 2.",
     "Ingresso Principale_Centro Grandi Ustionati Scala E 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 3.",
-    
-    // Tutto il resto ancora da sviluppare
-  };
+
+    // --- SCALA A ---
+    "Scala A_Ortopedia Scala B 3": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 3.",
+    "Scala A_Chirurgia d'Urgenza Scala B 4": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 4.",
+    "Scala A_Ostetricia e Ginecologia Scala B 5": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 5.",
+    "Scala A_Medicina Interna Scala B 6": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 6.",
+    "Scala A_Cardiologia Scala B 7": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 7.",
+    "Scala A_Medicina d'Urgenza Scala E 1": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Scendi al piano 1.",
+    "Scala A_Degenza Chirurgica Scala E 2": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Sali al piano 2.",
+    "Scala A_Urologia Scala E 2": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Sali al piano 2.",
+    "Scala A_Centro Grandi Ustionati Scala E 3": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Sali al piano 3.",
+
+    // --- SCALA B ---
+    "Scala B_Ortopedia Scala B 3": "Prendi la Scala B e sali al piano 3.",
+    "Scala B_Chirurgia d'Urgenza Scala B 4": "Prendi la Scala B e sali al piano 4.",
+    "Scala B_Ostetricia e Ginecologia Scala B 5": "Prendi la Scala B e sali al piano 5.",
+    "Scala B_Medicina Interna Scala B 6": "Prendi la Scala B e sali al piano 6.",
+    "Scala B_Cardiologia Scala B 7": "Prendi la Scala B e sali al piano 7.",
+    "Scala B_Medicina d'Urgenza Scala E 1": "Scendi al piano 2, attraversa il reparto fino alla Scala E, poi scendi al piano 1.",
+    "Scala B_Degenza Chirurgica Scala E 2": "Scendi al piano 2, attraversa il reparto fino alla Scala E.",
+    "Scala B_Urologia Scala E 2": "Scendi al piano 2, attraversa il reparto fino alla Scala E.",
+    "Scala B_Centro Grandi Ustionati Scala E 3": "Scendi al piano 2, attraversa il reparto fino alla Scala E, poi sali al piano 3.",
+
+    // --- SCALA C ---
+    "Scala C_Ortopedia Scala B 3": "Percorso in sviluppo",
+    "Scala C_Chirurgia d'Urgenza Scala B 4": "Percorso in sviluppo",
+    "Scala C_Ostetricia e Ginecologia Scala B 5": "Percorso in sviluppo",
+    "Scala C_Medicina Interna Scala B 6": "Percorso in sviluppo",
+    "Scala C_Cardiologia Scala B 7": "Percorso in sviluppo",
+    "Scala C_Medicina d'Urgenza Scala E 1": "Percorso in sviluppo",
+    "Scala C_Degenza Chirurgica Scala E 2": "Percorso in sviluppo",
+    "Scala C_Urologia Scala E 2": "Percorso in sviluppo",
+    "Scala C_Centro Grandi Ustionati Scala E 3": "Percorso in sviluppo",
+
+    // --- SCALA D ---
+    "Scala D_Ortopedia Scala B 3": "Percorso in sviluppo",
+    "Scala D_Chirurgia d'Urgenza Scala B 4": "Percorso in sviluppo",
+    "Scala D_Ostetricia e Ginecologia Scala B 5": "Percorso in sviluppo",
+    "Scala D_Medicina Interna Scala B 6": "Percorso in sviluppo",
+    "Scala D_Cardiologia Scala B 7": "Percorso in sviluppo",
+    "Scala D_Medicina d'Urgenza Scala E 1": "Percorso in sviluppo",
+    "Scala D_Degenza Chirurgica Scala E 2": "Percorso in sviluppo",
+    "Scala D_Urologia Scala E 2": "Percorso in sviluppo",
+    "Scala D_Centro Grandi Ustionati Scala E 3": "Percorso in sviluppo",
+
+    // --- SCALA E ---
+    "Scala E_Ortopedia Scala B 3": "Attraversa il reparto fino alla Scala B, poi sali al piano 3.",
+    "Scala E_Chirurgia d'Urgenza Scala B 4": "Attraversa il reparto fino alla Scala B, poi sali al piano 4.",
+    "Scala E_Ostetricia e Ginecologia Scala B 5": "Attraversa il reparto fino alla Scala B, poi sali al piano 5.",
+    "Scala E_Medicina Interna Scala B 6": "Attraversa il reparto fino alla Scala B, poi sali al piano 6.",
+    "Scala E_Cardiologia Scala B 7": "Attraversa il reparto fino alla Scala B, poi sali al piano 7.",
+    "Scala E_Medicina d'Urgenza Scala E 1": "Prendi la Scala E e scendi al piano 1.",
+    "Scala E_Degenza Chirurgica Scala E 2": "Prendi la Scala E e sali al piano 2.",
+    "Scala E_Urologia Scala E 2": "Prendi la Scala E e sali al piano 2.",
+    "Scala E_Centro Grandi Ustionati Scala E 3": "Prendi la Scala E e sali al piano 3."
+};
 
   function scegliPartenza(p) {
     partenzaSelezionata = p;
