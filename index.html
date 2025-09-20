@@ -11,15 +11,15 @@
       font-family: Arial, sans-serif;
       background-color: #E6F4FF;
     }
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* in alto, non centrato */
+  align-items: center;
+  min-height: 100vh;  /* non forzare height fissa */
+  padding: 20px;
+  overflow-y: auto;   /* scroll se serve */
+}
     h1, h2 {
       margin-bottom: 1rem;
       color: #003366;
