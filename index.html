@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Guida Ospedale</title>
   <style>
-body, html {
+    body, html {
       height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
@@ -41,14 +41,13 @@ body, html {
     button:hover {
       background-color: #005fa3;
     }
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
     #guida {
       margin-top: 20px;
       font-size: 1rem;
       color: #004080;
-      max-width: 400px;
+      max-width: 480px;
+      line-height: 1.45;
     }
   </style>
 </head>
@@ -60,39 +59,40 @@ body, html {
   <div id="schermata1">
     <h1>Dove ti trovi?</h1>
     <button onclick="scegliPartenza('ingresso principale')">Ingresso principale</button>
-    <button onclick="scegliPartenza('scala A')">Scala A</button>
-    <button onclick="scegliPartenza('scala B')">Scala B</button>
-    <button onclick="scegliPartenza('scala C')">Scala C</button>
-    <button onclick="scegliPartenza('scala D')">Scala D</button>
-    <button onclick="scegliPartenza('scala E')">Scala E</button>
-    <button onclick="scegliPartenza('scala G')">Scala G</button>
+    <button onclick="scegliPartenza('scala a')">Scala A</button>
+    <button onclick="scegliPartenza('scala b')">Scala B</button>
+    <button onclick="scegliPartenza('scala c')">Scala C</button>
+    <button onclick="scegliPartenza('scala d')">Scala D</button>
+    <button onclick="scegliPartenza('scala e')">Scala E</button>
+    <button onclick="scegliPartenza('scala g')">Scala G</button>
   </div>
 
   <!-- Schermata 2 -->
   <div id="schermata2" class="hidden">
     <h2>Dove devi andare?</h2>
-    <button onclick="scegliArrivo('Ortopedia')">Ortopedia</button>
-    <button onclick="scegliArrivo('Chirurgia generale e d\'urgenza')">Chirurgia generale e d'urgenza</button>
-    <button onclick="scegliArrivo('Ostetricia e Ginecologia')">Ostetricia e Ginecologia</button>
-    <button onclick="scegliArrivo('Medicina Interna')">Medicina Interna</button>
-    <button onclick="scegliArrivo('Cardiologia e Terapia Intensiva Cardiologica')">Cardiologia e Terapia Intensiva Cardiologica</button>
-    <button onclick="scegliArrivo('Medicina d\'Urgenza')">Medicina d'Urgenza</button>
-    <button onclick="scegliArrivo('Nefrologia')">Nefrologia</button>
-    <button onclick="scegliArrivo('Neurologia')">Neurologia</button>
-    <button onclick="scegliArrivo('Degenza Chirurgica')">Degenza Chirurgica</button>
-    <button onclick="scegliArrivo('Urologia')">Urologia</button>
-    <button onclick="scegliArrivo('Centro Grandi Ustionati')">Centro Grandi Ustionati</button>
-    <button onclick="scegliArrivo('Maxillo Facciale')">Maxillo Facciale</button>
-    <button onclick="scegliArrivo('Otorhinolaryngoiatria')">Otorhinolaryngoiatria</button>
-    <button onclick="scegliArrivo('Reanimazione')">Reanimazione</button>
-    <button onclick="scegliArrivo('Neurochirurgia')">Neurochirurgia</button>
-    <button onclick="scegliArrivo('Chirurgia Vascolare')">Chirurgia Vascolare</button>
-    <button onclick="scegliArrivo('Gastroenterologia')">Gastroenterologia</button>
-    <button onclick="scegliArrivo('Ambulatorio Preospedalizzazione')">Ambulatorio Preospedalizzazione</button>
-    <button onclick="scegliArrivo('Ostetricia ambulatoriale')">Ostetricia ambulatoriale</button>
-    <button onclick="scegliArrivo('Aria Ambulatoriale')">Aria Ambulatoriale</button>
-    <button onclick="scegliArrivo('Pediatria')">Pediatria</button>
-    <button onclick="scegliArrivo('Terapia Intensiva Neonatale e Pediatrica')">Terapia Intensiva Neonatale e Pediatrica</button>
+    <button onclick="scegliArrivo('ortopedia')">Ortopedia</button>
+    <button onclick="scegliArrivo('chirurgia generale e d\'urgenza')">Chirurgia generale e d'urgenza</button>
+    <button onclick="scegliArrivo('ostetricia e ginecologia')">Ostetricia e Ginecologia</button>
+    <button onclick="scegliArrivo('medicina interna')">Medicina Interna</button>
+    <button onclick="scegliArrivo('cardiologia e terapia intensiva cardiologica')">Cardiologia e Terapia Intensiva Cardiologica</button>
+    <button onclick="scegliArrivo('medicina d\'urgenza')">Medicina d'Urgenza</button>
+    <button onclick="scegliArrivo('nefrologia')">Nefrologia</button>
+    <button onclick="scegliArrivo('neurologia')">Neurologia</button>
+    <button onclick="scegliArrivo('degenza chirurgica')">Degenza Chirurgica</button>
+    <button onclick="scegliArrivo('urologia')">Urologia</button>
+    <button onclick="scegliArrivo('centro grandi ustionati')">Centro Grandi Ustionati</button>
+    <button onclick="scegliArrivo('maxillo facciale')">Maxillo Facciale</button>
+    <button onclick="scegliArrivo('otorinolaringoiatria')">Otorinolaringoiatria</button>
+    <button onclick="scegliArrivo('rianimazione')">Rianimazione</button>
+    <button onclick="scegliArrivo('neurochirurgia')">Neurochirurgia</button>
+    <button onclick="scegliArrivo('chirurgia vascolare')">Chirurgia Vascolare</button>
+    <button onclick="scegliArrivo('gastroenterologia')">Gastroenterologia</button>
+    <button onclick="scegliArrivo('ambulatorio preospedalizzazione')">Ambulatorio Preospedalizzazione</button>
+    <button onclick="scegliArrivo('ostetricia ambulatoriale')">Ostetricia ambulatoriale</button>
+    <button onclick="scegliArrivo('area ambulatoriale')">Area Ambulatoriale</button>
+    <button onclick="scegliArrivo('pediatria')">Pediatria</button>
+    <button onclick="scegliArrivo('terapia intensiva neonatale e pediatrica')">Terapia Intensiva Neonatale e Pediatrica</button>
+    <button onclick="scegliArrivo('geriatria')">Geriatria (Scala F)</button>
   </div>
 
   <!-- Schermata 3 -->
@@ -108,74 +108,213 @@ body, html {
   let partenzaSelezionata = null;
   let arrivoSelezionata = null;
 
-  // Qui inserisci il tuo guidaMap
-const guidaMap = {
-    // --- INGRESSO PRINCIPALE ---
-    "Ingresso Principale_Ortopedia Scala B 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 3.",
-    "Ingresso Principale_Chirurgia d'Urgenza Scala B 4": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 4.",
-    "Ingresso Principale_Ostetricia e Ginecologia Scala B 5": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 5.",
-    "Ingresso Principale_Medicina Interna Scala B 6": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 6.",
-    "Ingresso Principale_Cardiologia Scala B 7": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, sinistra per Scala B. Sali al piano 7.",
-    "Ingresso Principale_Medicina d'Urgenza Scala E 1": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Scendi al piano 1.",
-    "Ingresso Principale_Degenza Chirurgica Scala E 2": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 2.",
-    "Ingresso Principale_Urologia Scala E 2": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 2.",
-    "Ingresso Principale_Centro Grandi Ustionati Scala E 3": "Dall’ingresso principale prendi la Scala A, sali al 2° piano, destra, corridoio fino in fondo, destra per Scala E. Sali al piano 3.",
+  // Mappa percorsi (chiavi minuscole: "partenza_arrivo")
+  const guidaMap = {
+    /* =========================
+       INGRESSO PRINCIPALE
+       ========================= */
+    "ingresso principale_ortopedia":
+      "Dall’ingresso raggiungi la Scala A → sali al 2° → destra → corridoio fino in fondo → sinistra per Scala B → sali al 3°.",
+    "ingresso principale_chirurgia generale e d'urgenza":
+      "Ingresso → Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 4°.",
+    "ingresso principale_ostetricia e ginecologia":
+      "Ingresso → Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 5°.",
+    "ingresso principale_medicina interna":
+      "Ingresso → Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 6°.",
+    "ingresso principale_cardiologia e terapia intensiva cardiologica":
+      "Ingresso → Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 7°.",
+    "ingresso principale_medicina d'urgenza":
+      "Ingresso → Scala A → 2° → destra → in fondo → destra per Scala E → scendi al 1° (Pronto Soccorso/Piastra Servizi).",
+    "ingresso principale_degenza chirurgica":
+      "Ingresso → Scala A → 2° → destra → in fondo → destra per Scala E → sali al 2°.",
+    "ingresso principale_urologia":
+      "Ingresso → Scala A → 2° → destra → in fondo → destra per Scala E → sali al 2°.",
+    "ingresso principale_centro grandi ustionati":
+      "Ingresso → Scala A → 2° → destra → in fondo → destra per Scala E → sali al 3°.",
+    "ingresso principale_maxillo facciale":
+      "Ingresso → Scala A → 2° → destra → in fondo → destra per Scala E → sali al 3°.",
+    "ingresso principale_otorinolaringoiatria":
+      "Ingresso → Scala A → 2° → destra → in fondo → destra per Scala E → sali al 3°.",
+    "ingresso principale_rianimazione":
+      "Ingresso → Scala A → 2° → destra → in fondo → sinistra per Scala B → rep. Terapie Intensive (piano 4/UTIC 7° in base all’indicazione).",
+    "ingresso principale_chirurgia vascolare":
+      "Ingresso → Scala A → 2° → segui cartelli per Day Surgery/Chirurgia Vascolare (zona 3° tra B/C).",
+    "ingresso principale_gastroenterologia":
+      "Ingresso → Scala A → 2° → segui cartelli per Gastroenterologia/Day Surgery (zona 3° tra B/C).",
+    "ingresso principale_ambulatorio preospedalizzazione":
+      "Ingresso → Scala A → 2° → destra → in fondo → segui cartelli per Amb. Pre-Ospedalizzazione (Amb. Nu.C.O.T.).",
+    "ingresso principale_ostetricia ambulatoriale":
+      "Ingresso → Scala A → 2° → segui cartelli per Ostetricia/Ginecologia ambulatori.",
+    "ingresso principale_area ambulatoriale":
+      "Ingresso → Scala A → 2° → segui cartelli per Area Ambulatoriale/Day Hospital.",
+    "ingresso principale_pediatria":
+      "Ingresso → Scala A → sali fino al 7° (Pediatria).",
+    "ingresso principale_terapia intensiva neonatale e pediatrica":
+      "Ingresso → Scala A → sali fino al 7° (TIN/Terapia intensiva neonatale e pediatrica).",
+    "ingresso principale_nefrologia":
+      "Ingresso → Scala A → 2° → destra → in fondo → destra per Scala E → piano 1 (ambulatori) o 2 (dialisi) seguendo i cartelli.",
+    "ingresso principale_neurologia":
+      "Ingresso → Scala A → 2° → segui cartelli: ambulatori 2° (Scala C/E), degenza indicata su pannelli.",
+    "ingresso principale_geriatria":
+      "Esci dall’ingresso principale → svolta a sinistra → ancora sinistra all’angolo della struttura → entra alla Scala F ( ingresso esterno ) → sali al 1°: Geriatria.",
 
-    // --- SCALA A ---
-    "Scala A_Ortopedia Scala B 3": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 3.",
-    "Scala A_Chirurgia d'Urgenza Scala B 4": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 4.",
-    "Scala A_Ostetricia e Ginecologia Scala B 5": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 5.",
-    "Scala A_Medicina Interna Scala B 6": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 6.",
-    "Scala A_Cardiologia Scala B 7": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a sinistra verso la Scala B. Sali al piano 7.",
-    "Scala A_Medicina d'Urgenza Scala E 1": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Scendi al piano 1.",
-    "Scala A_Degenza Chirurgica Scala E 2": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Sali al piano 2.",
-    "Scala A_Urologia Scala E 2": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Sali al piano 2.",
-    "Scala A_Centro Grandi Ustionati Scala E 3": "Sali al 2° piano, gira a destra, percorri il corridoio fino in fondo, gira a destra verso la Scala E. Sali al piano 3.",
+    /* =========================
+       SCALA A (nodo centrale)
+       ========================= */
+    "scala a_ortopedia":
+      "Scala A → sali al 2° → destra → in fondo → sinistra per Scala B → sali al 3°.",
+    "scala a_chirurgia generale e d'urgenza":
+      "Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 4°.",
+    "scala a_ostetricia e ginecologia":
+      "Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 5°.",
+    "scala a_medicina interna":
+      "Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 6°.",
+    "scala a_cardiologia e terapia intensiva cardiologica":
+      "Scala A → 2° → destra → in fondo → sinistra per Scala B → sali al 7°.",
+    "scala a_medicina d'urgenza":
+      "Scala A → 2° → destra → in fondo → destra per Scala E → scendi al 1°.",
+    "scala a_degenza chirurgica":
+      "Scala A → 2° → destra → in fondo → destra per Scala E → sali al 2°.",
+    "scala a_urologia":
+      "Scala A → 2° → destra → in fondo → destra per Scala E → sali al 2°.",
+    "scala a_centro grandi ustionati":
+      "Scala A → 2° → destra → in fondo → destra per Scala E → sali al 3°.",
+    "scala a_maxillo facciale":
+      "Scala A → 2° → destra → in fondo → destra per Scala E → sali al 3°.",
+    "scala a_otorinolaringoiatria":
+      "Scala A → 2° → destra → in fondo → destra per Scala E → sali al 3°.",
+    "scala a_geriatria":
+      "Scala A → scendi al piano 0 → segui i cartelli per Ingresso → esci all’esterno → sinistra → sinistra all’angolo → entra in Scala F → sali al 1°.",
 
-    // --- SCALA B ---
-    "Scala B_Ortopedia Scala B 3": "Prendi la Scala B e sali al piano 3.",
-    "Scala B_Chirurgia d'Urgenza Scala B 4": "Prendi la Scala B e sali al piano 4.",
-    "Scala B_Ostetricia e Ginecologia Scala B 5": "Prendi la Scala B e sali al piano 5.",
-    "Scala B_Medicina Interna Scala B 6": "Prendi la Scala B e sali al piano 6.",
-    "Scala B_Cardiologia Scala B 7": "Prendi la Scala B e sali al piano 7.",
-    "Scala B_Medicina d'Urgenza Scala E 1": "Scendi al piano 2, attraversa il reparto fino alla Scala E, poi scendi al piano 1.",
-    "Scala B_Degenza Chirurgica Scala E 2": "Scendi al piano 2, attraversa il reparto fino alla Scala E.",
-    "Scala B_Urologia Scala E 2": "Scendi al piano 2, attraversa il reparto fino alla Scala E.",
-    "Scala B_Centro Grandi Ustionati Scala E 3": "Scendi al piano 2, attraversa il reparto fino alla Scala E, poi sali al piano 3.",
+    /* =========================
+       SCALA B
+       ========================= */
+    "scala b_ortopedia": "Scala B → sali al 3°.",
+    "scala b_chirurgia generale e d'urgenza": "Scala B → sali al 4°.",
+    "scala b_ostetricia e ginecologia": "Scala B → sali al 5°.",
+    "scala b_medicina interna": "Scala B → sali al 6°.",
+    "scala b_cardiologia e terapia intensiva cardiologica": "Scala B → sali al 7°.",
+    "scala b_medicina d'urgenza":
+      "Scala B → scendi al 2° → attraversa verso Scala E → scendi al 1°.",
+    "scala b_degenza chirurgica":
+      "Scala B → scendi al 2° → attraversa verso Scala E → 2°.",
+    "scala b_urologia":
+      "Scala B → scendi al 2° → attraversa verso Scala E → 2°.",
+    "scala b_centro grandi ustionati":
+      "Scala B → scendi al 2° → attraversa verso Scala E → sali al 3°.",
+    "scala b_maxillo facciale":
+      "Scala B → scendi al 2° → attraversa verso Scala E → sali al 3°.",
+    "scala b_otorinolaringoiatria":
+      "Scala B → scendi al 2° → attraversa verso Scala E → sali al 3°.",
+    "scala b_geriatria":
+      "Scala B → scendi al 2° → vai verso Scala A → scendi al piano 0 → esci → sinistra → sinistra all’angolo → Scala F → 1°.",
 
-    // --- SCALA C ---
-    "Scala C_Ortopedia Scala B 3": "Percorso in sviluppo",
-    "Scala C_Chirurgia d'Urgenza Scala B 4": "Percorso in sviluppo",
-    "Scala C_Ostetricia e Ginecologia Scala B 5": "Percorso in sviluppo",
-    "Scala C_Medicina Interna Scala B 6": "Percorso in sviluppo",
-    "Scala C_Cardiologia Scala B 7": "Percorso in sviluppo",
-    "Scala C_Medicina d'Urgenza Scala E 1": "Percorso in sviluppo",
-    "Scala C_Degenza Chirurgica Scala E 2": "Percorso in sviluppo",
-    "Scala C_Urologia Scala E 2": "Percorso in sviluppo",
-    "Scala C_Centro Grandi Ustionati Scala E 3": "Percorso in sviluppo",
+    /* =========================
+       SCALA C (2° piano, lato “uscita lato monte”)
+       ========================= */
+    "scala c_ortopedia":
+      "Sei al 2°: segui le frecce per Scala B (→) → Scala B → sali al 3°.",
+    "scala c_chirurgia generale e d'urgenza":
+      "2° → vai verso Scala B (→) → Scala B → sali al 4°.",
+    "scala c_ostetricia e ginecologia":
+      "2° → vai verso Scala B (→) → Scala B → sali al 5°.",
+    "scala c_medicina interna":
+      "2° → vai verso Scala B (→) → Scala B → sali al 6°.",
+    "scala c_cardiologia e terapia intensiva cardiologica":
+      "2° → vai verso Scala B (→) → Scala B → sali al 7°.",
+    "scala c_medicina d'urgenza":
+      "2° → vai verso Scala E (←) → Scala E → scendi al 1° (Pronto Soccorso).",
+    "scala c_degenza chirurgica":
+      "2° → vai verso Scala E (←) → Scala E → resta al 2°.",
+    "scala c_urologia":
+      "2° → vai verso Scala E (←) → Scala E → 2°.",
+    "scala c_centro grandi ustionati":
+      "2° → vai verso Scala E (←) → Scala E → sali al 3°.",
+    "scala c_maxillo facciale":
+      "2° → vai verso Scala E (←) → Scala E → sali al 3°.",
+    "scala c_otorinolaringoiatria":
+      "2° → vai verso Scala E (←) → Scala E → sali al 3°.",
+    "scala c_geriatria":
+      "2° → segui i cartelli per Ingresso (→ verso Scala A) → scendi al piano 0 → esci → sinistra → sinistra all’angolo → Scala F → 1°.",
 
-    // --- SCALA D ---
-    "Scala D_Ortopedia Scala B 3": "Percorso in sviluppo",
-    "Scala D_Chirurgia d'Urgenza Scala B 4": "Percorso in sviluppo",
-    "Scala D_Ostetricia e Ginecologia Scala B 5": "Percorso in sviluppo",
-    "Scala D_Medicina Interna Scala B 6": "Percorso in sviluppo",
-    "Scala D_Cardiologia Scala B 7": "Percorso in sviluppo",
-    "Scala D_Medicina d'Urgenza Scala E 1": "Percorso in sviluppo",
-    "Scala D_Degenza Chirurgica Scala E 2": "Percorso in sviluppo",
-    "Scala D_Urologia Scala E 2": "Percorso in sviluppo",
-    "Scala D_Centro Grandi Ustionati Scala E 3": "Percorso in sviluppo",
+    /* =========================
+       SCALA D (zona servizi; vicino a E)
+       ========================= */
+    "scala d_medicina d'urgenza":
+      "Dalla Scala D segui i cartelli per Scala E (adiacente) → Scala E → scendi al 1°.",
+    "scala d_degenza chirurgica":
+      "Scala D → segui per Scala E → 2°.",
+    "scala d_urologia":
+      "Scala D → segui per Scala E → 2°.",
+    "scala d_centro grandi ustionati":
+      "Scala D → segui per Scala E → sali al 3°.",
+    "scala d_maxillo facciale":
+      "Scala D → segui per Scala E → sali al 3°.",
+    "scala d_otorinolaringoiatria":
+      "Scala D → segui per Scala E → sali al 3°.",
+    "scala d_ortopedia":
+      "Scala D → segui per Scala B attraverso il corridoio del 2° → Scala B → sali al 3°.",
+    "scala d_chirurgia generale e d'urgenza":
+      "Scala D → corridoio 2° verso Scala B → sali al 4°.",
+    "scala d_ostetricia e ginecologia":
+      "Scala D → corridoio 2° verso Scala B → sali al 5°.",
+    "scala d_medicina interna":
+      "Scala D → corridoio 2° verso Scala B → sali al 6°.",
+    "scala d_cardiologia e terapia intensiva cardiologica":
+      "Scala D → corridoio 2° verso Scala B → sali al 7°.",
+    "scala d_geriatria":
+      "Scala D → segui per Ingresso (via Scala E/A) → piano 0 → esci → sinistra → sinistra all’angolo → Scala F → 1°.",
 
-    // --- SCALA E ---
-    "Scala E_Ortopedia Scala B 3": "Attraversa il reparto fino alla Scala B, poi sali al piano 3.",
-    "Scala E_Chirurgia d'Urgenza Scala B 4": "Attraversa il reparto fino alla Scala B, poi sali al piano 4.",
-    "Scala E_Ostetricia e Ginecologia Scala B 5": "Attraversa il reparto fino alla Scala B, poi sali al piano 5.",
-    "Scala E_Medicina Interna Scala B 6": "Attraversa il reparto fino alla Scala B, poi sali al piano 6.",
-    "Scala E_Cardiologia Scala B 7": "Attraversa il reparto fino alla Scala B, poi sali al piano 7.",
-    "Scala E_Medicina d'Urgenza Scala E 1": "Prendi la Scala E e scendi al piano 1.",
-    "Scala E_Degenza Chirurgica Scala E 2": "Prendi la Scala E e sali al piano 2.",
-    "Scala E_Urologia Scala E 2": "Prendi la Scala E e sali al piano 2.",
-    "Scala E_Centro Grandi Ustionati Scala E 3": "Prendi la Scala E e sali al piano 3."
-};
+    /* =========================
+       SCALA E
+       ========================= */
+    "scala e_ortopedia":
+      "Scala E → attraversa verso Scala B → sali al 3°.",
+    "scala e_chirurgia generale e d'urgenza":
+      "Scala E → attraversa verso Scala B → sali al 4°.",
+    "scala e_ostetricia e ginecologia":
+      "Scala E → attraversa verso Scala B → sali al 5°.",
+    "scala e_medicina interna":
+      "Scala E → attraversa verso Scala B → sali al 6°.",
+    "scala e_cardiologia e terapia intensiva cardiologica":
+      "Scala E → attraversa verso Scala B → sali al 7°.",
+    "scala e_medicina d'urgenza": "Scala E → scendi al 1°.",
+    "scala e_degenza chirurgica": "Scala E → 2°.",
+    "scala e_urologia": "Scala E → 2°.",
+    "scala e_centro grandi ustionati": "Scala E → 3°.",
+    "scala e_maxillo facciale": "Scala E → 3°.",
+    "scala e_otorinolaringoiatria": "Scala E → 3°.",
+    "scala e_geriatria":
+      "Scala E → vai verso Ingresso (Scala A) → piano 0 → esci → sinistra → sinistra all’angolo → Scala F → 1°.",
+
+    /* =========================
+       SCALA G (2° piano, lato Biblioteca/Direzione)
+       ========================= */
+    "scala g_ortopedia":
+      "Scala G (2°) → segui corridoio a sinistra verso Scala B → Scala B → sali al 3°.",
+    "scala g_chirurgia generale e d'urgenza":
+      "Scala G (2°) → verso Scala B → sali al 4°.",
+    "scala g_ostetricia e ginecologia":
+      "Scala G (2°) → verso Scala B → sali al 5°.",
+    "scala g_medicina interna":
+      "Scala G (2°) → verso Scala B → sali al 6°.",
+    "scala g_cardiologia e terapia intensiva cardiologica":
+      "Scala G (2°) → verso Scala B → sali al 7°.",
+    "scala g_medicina d'urgenza":
+      "Scala G (2°) → corridoio verso Scala E (→) → Scala E → scendi al 1°.",
+    "scala g_degenza chirurgica":
+      "Scala G (2°) → corridoio verso Scala E → 2°.",
+    "scala g_urologia":
+      "Scala G (2°) → corridoio verso Scala E → 2°.",
+    "scala g_centro grandi ustionati":
+      "Scala G (2°) → corridoio verso Scala E → sali al 3°.",
+    "scala g_maxillo facciale":
+      "Scala G (2°) → corridoio verso Scala E → sali al 3°.",
+    "scala g_otorinolaringoiatria":
+      "Scala G (2°) → corridoio verso Scala E → sali al 3°.",
+    "scala g_geriatria":
+      "Scala G → segui i cartelli per Ingresso (via Scala A) → piano 0 → esci → sinistra → sinistra all’angolo → Scala F → 1°."
+  };
 
   function scegliPartenza(punto) {
     partenzaSelezionata = punto.trim().toLowerCase();
